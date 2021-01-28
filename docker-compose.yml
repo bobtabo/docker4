@@ -5,7 +5,7 @@ volumes:
 
 services:
   nginx:
-    container_name: ${CONTAINER_NGINX}
+    container_name: ${NGINX_CONTAINER}
     build: ./nginx
     ports:
       - '80:80'
@@ -19,7 +19,7 @@ services:
       - SERVER_NAME=${SERVER_NAME}
 
   php:
-    container_name: ${CONTAINER_PHP}
+    container_name: ${PHP_CONTAINER}
     build: ./php
     ports:
       - '${XDEBUG_PORT}:9000'
@@ -31,21 +31,21 @@ services:
 
   mysql:
     image: mysql:8
-    container_name: ${CONTAINER_MYSQL}
+    container_name: ${MYSQL_CONTAINER}
     environment:
-      MYSQL_DATABASE: ${DATABASE_NAME}
-      MYSQL_USER: ${DATABASE_USER}
-      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
     ports:
-      - "${DATABASE_PORT}:3306"
+      - "${MYSQL_PORT}:3306"
     volumes:
       - ./db:/var/lib/mysql
 
   redis:
     image: redis:latest
-    container_name: ${CONTAINER_REDIS}
+    container_name: ${REDIS_CONTAINER}
     ports:
       - "${REDIS_PORT}:6379"
     volumes:
