@@ -9,4 +9,4 @@ https://qiita.com/_bobtabo_/items/e76a14bd7ed65b5e34b1
 * MySQL 8.x
 * Composer 2.x
 * Laravel 8.x
-* Redis 6.0.x
+* Redis 最新版

@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name ${APP_NAME}.local;
+    server_name ${SERVER_NAME};
 
     charset UTF-8;
     access_log  /var/log/nginx/access.log;
