@@ -27,7 +27,8 @@ services:
       - ./src:/home/docker
       - phpsocket:/var/run
     depends_on:
-      - db
+      - mysql
+      - redis
 
   mysql:
     image: mysql:8
