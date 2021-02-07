@@ -10,3 +10,4 @@ https://qiita.com/_bobtabo_/items/e76a14bd7ed65b5e34b1
 * Composer 2.x
 * Laravel 8.x
 * Redis 最新版
+* MailHog 最新版
