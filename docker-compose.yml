@@ -51,3 +51,9 @@ services:
       - "${REDIS_PORT}:6379"
     volumes:
       - "./data:/data"
+
+  mail:
+      image: mailhog/mailhog
+      container_name: ${MAIL_CONTAINER}
+      ports:
+        - "${MAIL_PORT}:8025"
