@@ -36,7 +36,6 @@ RUN mkdir -p /var/run/php-fpm \
       && chown docker:docker /var/run/php-fpm
 
 # 設定の置換
-COPY php.ini /usr/local/etc/php/php.ini
 COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 COPY www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
 
