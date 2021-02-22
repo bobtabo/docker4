@@ -13,11 +13,12 @@ services:
     volumes:
       - ./nginx/certs:/etc/nginx/certs
       - ./nginx/templates:/etc/nginx/templates
-      - ./src/${APP_NAME}:/var/www/html
+      - ./src:/home/docker
       - phpsocket:/var/run
     depends_on:
       - php
     environment:
+      - APP_NAME=${APP_NAME}
       - SERVER_NAME=${SERVER_NAME}
       - NGINX_CERTS_NAME=${NGINX_CERTS_NAME}
 
