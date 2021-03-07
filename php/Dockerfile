@@ -3,8 +3,6 @@ FROM php:7.4-fpm
 # ライブラリのインストール
 RUN apt-get update
 RUN apt-get install -y \
-      sudo \
-      libpq-dev \
       libonig-dev \
       git \
       zip \
